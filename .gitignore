@@ -1,5 +1,4 @@
 node_modules/
-myUserDataDir/*
 img/*
 !img/examples/*
 docs/loggedin.txt
