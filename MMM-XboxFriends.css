@@ -1,0 +1,67 @@
+.MMM-XboxFriends ul.list{
+  list-style: none;
+  display: inline-block;
+  max-width: 95%;
+  padding-left: 0;
+  margin-top: 5px;
+  min-width: 100%
+}
+
+.MMM-XboxFriends li.friend{
+  display: block;
+  background-color: #222;
+  color: #fff;
+  padding: 10px;
+  margin:  0 5px 10px 0;
+}
+
+.MMM-XboxFriends div.info{
+  display: flex;
+}
+
+.MMM-XboxFriends div.image{
+  float: left;
+  display: block;
+  line-height: 0;
+  padding-top: 1px;  
+}
+
+.MMM-XboxFriends .foto{
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-image: url("http://placehold.it/40?text=X");
+  overflow: hidden;
+}
+
+.MMM-XboxFriends .foto:before{
+  content: " ";
+  font-size: 1000px;
+}
+
+.MMM-XboxFriends div.detail{
+  padding-left: 10px;
+  display:inline-grid;
+  overflow: hidden;
+  max-width: 95%;
+  line-height: normal;
+}
+
+.MMM-XboxFriends span.name{
+  font-weight: bold;
+  font-size: 20px;
+  display: inline;
+  /*text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;*/
+  text-align: left;
+}
+
+.MMM-XboxFriends span.status{
+  /*overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;*/
+  font-size: 15px;
+  display: inline;
+  text-align: left;
+}
