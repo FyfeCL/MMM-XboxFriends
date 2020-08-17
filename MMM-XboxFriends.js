@@ -29,7 +29,8 @@ Module.register("MMM-XboxFriends", {
 		maxLengthDetails: 25,				// max string length for name and status
 		onlineFriends: 0,					// count online friends
 		totalFriends: 0,					// count total friends
-		updateInterval: 10					// minutes to update
+		updateInterval: 10,					// minutes to update
+		showUpdTime: false					// true: show last time updated
 		
 	}, 
 	  
@@ -84,6 +85,7 @@ Module.register("MMM-XboxFriends", {
 			var currentFadeStep = 0;
 			
 			this.config.totalFriends = this.friendsArray.length;
+			this.config.onlineFriends = 0;
 			
 			/*for each friend create a list unit with image, name and status*/
 			for (let i=0; i<Math.min(this.friendsArray.length, this.config.maximumEntries); i++){
@@ -209,10 +211,19 @@ Module.register("MMM-XboxFriends", {
 		and shows header + (onlineFriends / totalFriends)
 	******************************************************/    
 	getHeader: function () {
+		var hrActual = new Date().toLocaleTimeString('en-US', { hour12: false,
+																hour: "numeric",
+																minute: "numeric"}
+													);
+		
 		if (this.config.totalFriends == 0){
 			return this.data.header;
 		}else{
-			return this.data.header + ' ( ' + this.config.onlineFriends + ' / ' + this.config.totalFriends + ' )';
+			if (this.config.showUpdTime){
+				return this.data.header + ' ( ' + this.config.onlineFriends + ' / ' + this.config.totalFriends + ' )	upd: '+hrActual;
+			}else{
+				return this.data.header + ' ( ' + this.config.onlineFriends + ' / ' + this.config.totalFriends + ' )';
+			}	
 		}
 	},
 	

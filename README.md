@@ -48,8 +48,9 @@ node generateLogin.js
 		offline: true,			// true: show offline friends / false: show only online friends
 		fadePoint: 0.5,			// where fade starts, 1: no fade
 		fadeMinEntries: 7,		// min entries to enable fading
-		maxLengthDetails: 25,		// max string length for name and status
-		updateInterval: 10		// minutes to update
+		maxLengthDetails: 25,	// max string length for name and status
+		updateInterval: 10,		// minutes to update
+		showUpdTime: false		// true: show last time updated
 		debug: false,			// true: show dev logs
 		
 	}
@@ -79,6 +80,9 @@ node generateLogin.js
 
 #### **`updateInterval`**
 - Minutes between each refresh
+
+#### **`showUpdTime`**
+- show when was the last update
 
 #### **`debug`**
 - If set `true`, more (a lot more!) detailed info will be logged

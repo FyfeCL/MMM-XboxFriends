@@ -221,7 +221,7 @@ async function get_info(){
 		if(self.config.debug){console.log('loginFinal: '+self.loginFinal);}
 		
 		if(self.loginFinal){
-			console.log('already logged in');
+			if(self.config.debug){console.log('already logged in');}
 			/*myUserDataDir saves cookies and session so that you don't have to login every time*/
 			self.browser = await puppeteer.launch({executablePath: self.config.chromiumPath, headless : !self.config.showBrowser, userDataDir: self.path+'/myUserDataDir/'});
 			if(self.config.debug){console.log('userdata: '+self.path+'/myUserDataDir/');}
@@ -269,6 +269,8 @@ async function get_info(){
 					this.detail = detail;
 					this.imgPath = imgPath;          
 				};
+				
+				friendsArray = [];
 				
 				do {
 					/*retrieve name*/
