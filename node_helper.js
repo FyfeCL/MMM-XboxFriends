@@ -89,13 +89,13 @@ async function stop(reason){
 	if(self.config.debug){console.log('Puppeteer closed...');}
 	if(reason == 'user'){
 		self.loginUser = false;
-		console.log('wrong user');
+		if(self.config.debug){console.log('wrong user');}
 	}else if(reason == 'pass'){
 		self.loginPass = false;
-		console.log('wrong pass');
+		if(self.config.debug){console.log('wrong pass');}
 	}else if(reason == 'factor'){
 		self.loginFator = false;
-		console.log('second factor problem');
+		if(self.config.debug){console.log('second factor problem');}
 	}
 }
 
@@ -103,7 +103,7 @@ async function stop(reason){
 	Check creds.js for credentials
 ***********************************/
 var checkCreds = function checkCreds() {
-	console.log('creds: username: '+CREDS.username+' pass: '+CREDS.password);
+	if(self.config.debug){console.log('creds: username: '+CREDS.username+' pass: '+CREDS.password);}
 	if(CREDS.username != '' && CREDS.password != ''){
 		return true;
 	}else{
@@ -231,7 +231,7 @@ async function get_info(){
 			await self.page.goto('https://account.xbox.com/en-US/Friends');
 			
 		}else if(checkCreds() && !self.loginFinal){
-			console.log('creds ok, without login yet');
+			if(self.config.debug){console.log('creds ok, without login yet');}
 			await login(true);		// true, using creds.js 
 			loginCache('write');
 		}
@@ -315,7 +315,7 @@ async function get_info(){
 					let downloadPath = self.path.concat('/img/',username.toLowerCase(),'.jpg');
 					if(self.config.debug){console.log('download: ', downloadPath);}
 					await download(imageUrl, downloadPath, function () {
-									console.log('image OK');
+									if(self.config.debug){console.log('image OK');}
 								});
 					
 					friendsArray.push(new friend(i, username, online, detail.trim(), downloadPath));
