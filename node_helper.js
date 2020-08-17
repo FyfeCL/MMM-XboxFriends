@@ -337,6 +337,9 @@ async function get_info(){
 			}
 			
 			stop();
+		}else{
+			if(self.config.debug){console.log('Login problem');}
+			self.sendSocketNotification("LOGIN_NOT_OK_USER", '');
 		}
 	}catch(error){
 		console.error('get_info(): '+error);

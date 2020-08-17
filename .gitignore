@@ -1,6 +1,8 @@
 node_modules/
 docs/loggedin.txt
-<<<<<<< HEAD
-=======
 
->>>>>>> e6abdce020d1d1961b725604ebfc83df72d4b334
+**/img/*.jpg
+!img/xbox.png
+
+myUserDataDir/*
+!myUserDataDir/keep.txt
