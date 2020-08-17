@@ -50,7 +50,7 @@ node generateLogin.js
 		fadeMinEntries: 7,		// min entries to enable fading
 		maxLengthDetails: 25,	// max string length for name and status
 		updateInterval: 10,		// minutes to update
-		showUpdTime: false		// true: show last time updated
+		showUpdTime: false,		// true: show last time updated
 		debug: false,			// true: show dev logs
 		
 	}
