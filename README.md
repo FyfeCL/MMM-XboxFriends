@@ -2,7 +2,7 @@
 Display your Xbox friends on MagicMirror. This module uses [Puppeteer](https://github.com/puppeteer/puppeteer) to emulates your login in xbox site and then retrieves your friends list.
 
 ## Screenshot
-![](https://raw.githubusercontent.com/FyfeCL/MMM-XboxFriends/master/img/examles/example.png)
+![](https://github.com/FyfeCL/MMM-XboxFriends/blob/master/img/examples/example.png?raw=true)
 
 ## Regular installation
 1. Install Module
